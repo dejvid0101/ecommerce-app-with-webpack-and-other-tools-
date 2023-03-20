@@ -2,7 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, "src", "index.js"),
+  mode: 'development',
+  entry: path.join(__dirname, "src", "index.tsx"),
 
   output: {
     path:path.resolve(__dirname, "dist"),
@@ -20,12 +21,28 @@ module.exports = {
           }
         }
       },
-    ]
+
+      //another loader like babel
+      {
+        test: /\.css$/i,
+        use: ["style-loader","css-loader"],
+      },
+
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+      },
+    ],
   },
 
+ 
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
   ],
+
+  resolve: {
+    extensions: ['.js', '.json', '.wasm', '.ts', '.tsx']
+  },
 }
