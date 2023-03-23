@@ -3,10 +3,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: path.join(__dirname, "src", "index.tsx"),
+  entry: {
+    home: path.join(__dirname, "src","index.tsx"),
+},
 
   output: {
-    path:path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist"),
+    filename: '[name].bundle.js',
+    //for running the app on client (routing purposes)
+    publicPath: '/'
+  },
+
+  //for running the app on client (routing purposes)
+  devServer: {
+    historyApiFallback: true,
   },
 
   module: {
@@ -22,10 +32,17 @@ module.exports = {
         }
       },
 
-      //another loader like babel
+      //another loader like ts
       {
-        test: /\.css$/i,
-        use: ["style-loader","css-loader"],
+        test: /\.scss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader"
+        ],
       },
 
       {
@@ -35,14 +52,27 @@ module.exports = {
     ],
   },
 
- 
+
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
+
   ],
 
   resolve: {
-    extensions: ['.js', '.json', '.wasm', '.ts', '.tsx']
+    extensions: ['.js', '.json', '.wasm', '.ts', '.tsx'],
+    fallback:{ /* "path": false ,
+     "url": false,
+     "util": false,
+     "stream": false,
+     "path": false,
+     "querystring": false,
+     "http": false,
+     "crypto": false,
+     "zlib": false,
+     "fs":false,
+     "net":false */
+     }
   },
 }

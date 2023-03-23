@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Childcomponent1 from './childcomponent1'
 import Childcomponent2 from './childcomponent2'
 import {useSelector, useDispatch} from 'react-redux'

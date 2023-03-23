@@ -1,3 +1,5 @@
+// counter reducer module
+
 import { createSlice } from '@reduxjs/toolkit'
 
 interface Action {
