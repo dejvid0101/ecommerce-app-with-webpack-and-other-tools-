@@ -1,7 +1,9 @@
+
+@use 'details/itembrowser';
 @use 'scss-variables';
 
-.test{
+.test {
     font-family: Arial, Helvetica, sans-serif;
     color: scss-variables.$primary-color;
-    
-} 
+}
+

@@ -1,5 +1,4 @@
 //app entry point
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Navbar from './components/navbar'
@@ -8,7 +7,7 @@ import { Store } from './reduxstore'
 import { Provider } from 'react-redux'
 import './globals.scss'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import DetailsPage from './details/detailsPage'
+import ItemBrowser from './details/components/itembrowser'
 
 //client routing object
 const rtr = createBrowserRouter([
@@ -21,7 +20,7 @@ const rtr = createBrowserRouter([
   },
   {
     path: '/details',
-    element: <DetailsPage></DetailsPage>
+    element: <ItemBrowser></ItemBrowser>
   }
 ]);
 

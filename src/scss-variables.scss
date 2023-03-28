@@ -1,1 +1,21 @@
-$primary-color: turquoise;
+$primary-color: #0b6e4f;
+$secondary-color: #C7cb85;
+$font-verdana: Verdana, Geneva, Tahoma, sans-serif;
+
+@mixin desc-mixin($translatearg) {
+    width: 100%;
+    margin-top: 16px;
+    height: 33%;
+    position: relative;
+    font-size: smaller;
+    font-family: $font-verdana;
+    transition: 0.2s;
+    top: $translatearg;
+}
+
+@mixin img-card-mixin {
+    position: absolute;
+    object-fit: cover;
+    width: inherit;
+    transition: opacity 0.2s;
+}

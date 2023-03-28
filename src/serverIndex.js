@@ -38,7 +38,8 @@ const dataPromise=fetchData()
 .then((promiseRes)=>res.send(JSON.stringify(promiseRes)));
 
   })
-  
+      
+
   app.listen(port, () => {
     
   })
