@@ -1,7 +1,12 @@
 import React from 'react'
 import { img1, img2 } from '../../images';
+import {Item} from '../../interfaces/interfaces'
+import {ItemProps} from '../../interfaces/interfaces'
 
-export default function itemcard() {
+//for prop drilling (now handled by redux store)
+
+
+export default function itemcard({Item}:ItemProps) {
   return (
     <div className="item-card">
               <div className="img-wrapper">
@@ -11,11 +16,11 @@ export default function itemcard() {
               </div>
               <div className="desc-wrapper">
                 <div className="desc-primary-element">
-                  Apartman Sunce
+                  {Item.Name}
                 </div>
                 <div className="desc-secondary-element">
                   {/* one desc remains hidden depending on item-card-wrapper's hover element */}
-                  <div className="desc-1">Božava, Dugi Otok</div>
+                  <div className="desc-1">{Item.Address}</div>
                   <div className="desc-2">Tuš kabina, Pećnica...</div>
                 </div>
                 <div className="price-element">

@@ -34,3 +34,4 @@ export default function inputReducer(state = inputState, inputAction: ActionType
     // otherwise return the existing state unchanged
     return state
 }
+

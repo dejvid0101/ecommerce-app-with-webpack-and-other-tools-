@@ -1,9 +1,19 @@
 
-@use 'details/itembrowser';
+@use 'home/itembrowser';
 @use 'scss-variables';
 
 .test {
     font-family: Arial, Helvetica, sans-serif;
     color: scss-variables.$primary-color;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+#root{
+width: 100%;
+margin-top: 0;
 }
 

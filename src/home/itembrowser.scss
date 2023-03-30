@@ -11,8 +11,8 @@
     height: 400px;
 
     .item-card {
-        
-    border: 1px solid variables.$primary-color;
+
+        border: 1px solid variables.$primary-color;
         width: 292px;
         height: 392px;
         margin: 4px 4px 4px 4px;
@@ -55,13 +55,13 @@
             width: inherit;
             overflow: hidden;
 
-            .img1{
+            .img1 {
                 @include variables.img-card-mixin;
                 transform: scale(1.6);
                 opacity: 1;
             }
 
-            .img2{
+            .img2 {
                 //second image hidden at first
                 opacity: 0;
                 @include variables.img-card-mixin;
@@ -96,45 +96,106 @@
                 .desc-1 {
                     @include variables.desc-mixin($translatearg: 0px);
                 }
-                
+
                 .desc-2 {
                     //initial translate value hides the element
                     @include variables.desc-mixin($translatearg: 112px);
                 }
             }
 
-                .price-element {
-                    background-color: variables.$secondary-color;
+            .price-element {
+                background-color: variables.$secondary-color;
+                display: flex;
+                justify-content: center;
+
+                .price-button {
+                    margin: auto;
+                    width: 60%;
+                    background-color: #0b6e4f;
                     display: flex;
                     justify-content: center;
-
-                    .price-button{
-                        margin:auto;
-                        width:60%;
-                        background-color: #0b6e4f;
-                        display: flex;
-                    justify-content: center;
                     cursor: pointer;
-                    }
+                }
 
-                    .price-button-content{
-                        font-family: variables.$font-verdana;
-                    }
+                .price-button-content {
+                    font-family: variables.$font-verdana;
                 }
             }
         }
     }
+}
 
-    .ul-itembrowser {
-        display: grid;
-        gap: 10px;
-        width: 200px;
+.ul-itembrowser {
+    display: grid;
+    gap: 10px;
+    width: 200px;
 
-        @media screen and (min-width: 900px) and (max-width:1200px) {
-            grid-template-columns: repeat(2, 300px);
+    @media screen and (min-width: 900px) and (max-width:1200px) {
+        grid-template-columns: repeat(2, 300px);
+    }
+
+    @media screen and (min-width: 1200px) {
+        grid-template-columns: repeat(3, 300px);
+    }
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    height: 60px;
+    width: inherit;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    z-index: 9999;
+
+    .navbar-warp-wrapper {
+        background-color: peru;
+    }
+
+    .navbar-searchbar-wrapper {
+        background-color: olive;
+        grid-column: span 10;
+    }
+
+    .navbar-cart-wrapper {
+        //center within 12th column
+        align-self: center;
+        justify-self: center;
+
+        border-radius: 2%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-image: url('https://m.media-amazon.com/images/G/01/gno/sprites/nav-sprite-global-2x-hm-dsk-reorg._CB405937547_.png');
+        background-position: -00px -375px;
+        background-size: 400px;
+        width: 71px;
+        height: 50px;
+        cursor: pointer;
+
+        transition: background-color 0.1s;
+
+        &:hover{
+
+            background-color: variables.$primary-color;
         }
 
-        @media screen and (min-width: 1200px) {
-            grid-template-columns: repeat(3, 300px);
+        .cart-counter-wrapper {
+            text-align: center;
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .cart-counter{
+            font-family: variables.$font-verdana;
+            vertical-align: middle;
+            font-size: 13px;
+            color: white;
         }
     }
+}

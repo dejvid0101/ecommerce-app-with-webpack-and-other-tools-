@@ -8,6 +8,7 @@ export default function navbar() {
   //access the store state's reducer with name counter which returns the state object whose property we access in the third reference
 const count=useSelector((state:any)=>state.counter.counter)
 
+
 const inputField=React.useRef(null);
 
   return (
