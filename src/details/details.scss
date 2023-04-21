@@ -1,0 +1,29 @@
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.apt-header {
+    margin-bottom: 5px;
+}
+
+.imgbrowser-imgwrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.imgbrowser-img{
+height: 90px;
+margin: 4px;
+}
+

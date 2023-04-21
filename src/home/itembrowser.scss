@@ -66,6 +66,11 @@
                 opacity: 0;
                 @include variables.img-card-mixin;
             }
+
+            //for conditional rendering
+            .img-generic{
+                @include variables.img-card-mixin;
+            }
         }
 
         .desc-wrapper {
@@ -73,7 +78,6 @@
             display: grid;
             grid-template-rows: repeat(2, 1fr);
             grid-template-columns: repeat(2, 1fr);
-            line-height: 2rem;
 
             .desc-primary-element {
                 grid-column: span 2;
@@ -110,15 +114,18 @@
 
                 .price-button {
                     margin: auto;
-                    width: 60%;
+                    width: 80%;
                     background-color: #0b6e4f;
                     display: flex;
                     justify-content: center;
                     cursor: pointer;
+                    line-height: 2rem;
                 }
 
                 .price-button-content {
                     font-family: variables.$font-verdana;
+                    font-size: small;
+                    color: white;
                 }
             }
         }

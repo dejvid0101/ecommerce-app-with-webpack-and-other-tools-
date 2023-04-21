@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { createInputAction } from '../input'
 import { Store, AppDispatch } from '../reduxstore'
-import {fetchedItem, item} from '../interfaces/interfaces'
+import {rawItems, Item} from '../interfaces/interfaces'
 
 
 export default function childcomponent1() {
@@ -25,7 +25,7 @@ export default function childcomponent1() {
     )
   }
 
-  const items:fetchedItem = JSON.parse(value);
+  const items:rawItems = JSON.parse(value);
 
   //return apt name from server from db
   return (

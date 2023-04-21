@@ -14,14 +14,8 @@ const itemsSlice = createSlice({
     initialState,
     reducers: {
         setItems(state, action: ItemsActionType) {
-            //for each item received inside Items[], create object with selected properties and add to reducer state
-            action.payload.map((item) => {
-                state.push({
-                    Name: item.Name,
-                    Address: item.Address,
-
-                } as Item);
-            });
+            //received action payload return from action to preserve immutability
+            return [...state, ...action.payload]
         }
     },
 })
